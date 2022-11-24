@@ -1,0 +1,70 @@
+@charset "ISO-8859-1";
+/*CONFIG */
+body
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} 
+
+@font-face {
+    font-family: 'Poppins-regular';
+    src: url('../Recrutement/fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../Recrutement/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('../Recrutement/fonts/Poppins-Light.woff2') format('woff2'),
+        url('../Recrutement/fonts/Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*HEADER*/
+
+header
+{
+    background-color: #F5F5F5;
+    box-shadow: 0px 3px 6px #bebebe;
+}
+
+.wrap-nav
+{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.voiture-nav
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.voiture 
+{
+    width: 50%;
+}
+
+.text-nav
+{
+    display: flex;
+    align-items: center;
+    font-family: "Poppins-light";
+    font-size: 30px;
+    width: 25%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/*FOOTER*/

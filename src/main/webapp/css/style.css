@@ -235,3 +235,21 @@ header
     margin-right: 190px;
 }
 
+.container-page-connexion {
+	position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mdplost a, .newAccount a, .compte a {
+	text-decoration: none;
+	color: black;
+}
+
+.container-inscription {
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+

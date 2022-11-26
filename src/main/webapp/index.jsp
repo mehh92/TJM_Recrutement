@@ -28,7 +28,11 @@
         </div>
     </header>
     
-    <%@ include file="home.jsp"%>
+    <%-- <%@ include file="home.jsp"%> --%>
+    
+    <%-- <%@ include file="connexion.jsp" %> --%>
+    
+    <%@ include file="inscription.jsp" %>
     
   	<footer class="container-footer">
     	<div class="item-entreprise">   

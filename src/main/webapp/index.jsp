@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
-	<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
 	<title>TJM Recrutement</title>
 </head>
 <body>
@@ -27,8 +27,9 @@
             </div>
         </div>
     </header>
-    
+
     <%@ include file="home.jsp"%>
+    
     
   	<footer class="container-footer">
     	<div class="item-entreprise">   
@@ -41,7 +42,7 @@
        </div>
        <div class="item-info">
        		<h3> Informations </h3>
-           	<p class="info-p"> Pour tout renseignement, n'h�sitez pas � prendre contact avec nous ou � nous rendre visite ! </p>
+           	<p class="info-p"> Pour tout renseignement, n'hésitez pas à prendre <br> contact avec nous ou à nous rendre visite ! </p>
            <div class="element-info">
                <img src="assets/position.png">
                <p> 6-8 impasse des deux cousins, 75017, Paris </p>
@@ -56,6 +57,5 @@
            </div>
        </div>
     </footer> 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
 </body>
 </html>

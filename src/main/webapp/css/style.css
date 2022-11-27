@@ -53,13 +53,16 @@ header
 .voiture-nav
 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    width: 20%;
+    margin-left: 50px;
 }
 
 .voiture 
 {
-    width: 60%;
+    width: 200px;
 }
 
 .text-nav
@@ -67,7 +70,7 @@ header
     display: flex;
     align-items: center;
     font-family: "Poppins-light";
-    font-size: 30px;
+    font-size: 25px;
     width: 35%;
     justify-content: center;
     flex-wrap: wrap;
@@ -77,7 +80,7 @@ header
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     align-items: center;
     padding: 0;
@@ -86,6 +89,7 @@ header
 .text-nav > ul > li > a
 {
     text-decoration: none;
+    color: black;
 }
 /*FOOTER*/
 
@@ -99,7 +103,7 @@ header
     justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .item-entreprise 
@@ -230,8 +234,112 @@ header
 {
     margin-top: 40px;
     margin-bottom: 40px;
-    float: right;
     font-size: 40px;
-    margin-right: 190px;
+    margin-right: 380px;
+    text-align: right;
 }
 
+.container-secteur
+{
+    display: flex;
+    flex-direction: column;
+    height: 1500px;
+    justify-content: space-evenly;
+}
+
+.item-secteur
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 450px;
+    justify-content: center;
+}
+
+.div-text-mecanique
+{
+    width: 20%;
+    height: 100%;
+    background-color: #385B64;
+    color: #fff;
+}
+
+.h3-center
+{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.div-text-mecanique > p
+{
+    text-align: justify;
+    padding: 25px;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.div-img-mecanique
+{
+    width: 40%;
+}
+
+.img-mecanique
+{
+    width: 100%;
+    height: 450px;
+}
+
+.div-img-accueil
+{
+    width: 40%;
+}
+
+.img-accueil
+{
+    width: 100%;
+    height: 450px;
+}
+
+.div-text-accueil
+{
+    width: 20%;
+    height: 100%;
+    background-color: #385B64;
+    color: #fff;
+}
+
+.div-text-accueil > p
+{
+    text-align: justify;
+    padding: 25px;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.div-text-vente
+{
+    width: 20%;
+    height: 100%;
+    background-color: #385B64;
+    color: #fff;
+}
+
+.div-text-vente > p
+{
+    text-align: justify;
+    padding: 25px;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.div-img-vente
+{
+    width: 40%;
+}
+
+.img-vente
+{
+    width: 100%;
+    height: 450px;
+}

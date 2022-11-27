@@ -13,13 +13,13 @@
     </div>
 </div>
 
-<h1 class="titre-accueil-2">Nos différents secteurs</h1>
+<h1 class="titre-accueil-2">Nos differents secteurs</h1>
 
 <div class="container-secteur">
     <div class="item-secteur">
         <div class="div-text-mecanique">
-            <h3>Mécanique</h3>
-            <p>Lorem ipsum dolor sit amet consectetur 
+            <h3 class="h3-center">Mecanique</h3>
+            <p class="p-justify">Lorem ipsum dolor sit amet consectetur 
             adipisicing elit. Deleniti excepturi quos nesciunt 
             cupiditate fugiat nulla, molestiae illum harum consequatur 
             cumque repudiandae consequuntur voluptates aliquid voluptate</p>
@@ -29,32 +29,29 @@
         </div>
     </div>
 
-    <div class="item-secteur">
-        <div class="div-img-service">
-            <img class="img-accueil" src="assets/accueil.jpeg" alt="">
-        </div>
-        <div class="div-text-accueil">
-            <h3>Accueil & service client</h3>
-            <p>Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Deleniti excepturi quos nesciunt 
-            cupiditate fugiat nulla, molestiae illum harum consequatur 
-            cumque repudiandae consequuntur voluptates aliquid voluptate</p>
-        </div>
-    </div>
+	<div class="item-secteur">
+	    <div class="div-img-accueil">
+	        <img class="img-accueil" src="assets/accueil.jpeg" alt="">
+	    </div>
+	    <div class="div-text-accueil">
+	        <h3 class="h3-center">Accueil & service client</h3>
+	        <p>Lorem ipsum dolor sit amet consectetur 
+	        adipisicing elit. Deleniti excepturi quos nesciunt 
+	        cupiditate fugiat nulla, molestiae illum harum consequatur 
+	        cumque repudiandae consequuntur voluptates aliquid voluptate</p>
+	    </div>
+	</div>
 
-    <div class="item-secteur">
-        <div class="div-img-piece">
-            <img src="assets/piece.jpeg" alt="" class="img-piece">
-        </div>
-        <div class="div-text-vente">
-            <h3>Vente et conseil</h3>
-            <p>Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Deleniti excepturi quos nesciunt 
-            cupiditate fugiat nulla, molestiae illum harum consequatur 
-            cumque repudiandae consequuntur voluptates aliquid voluptate</p>
-        </div>
-        <div class="img-vente">
-            <img src="assets/vente.jpeg" alt="" class="img-vente">
-        </div>
-    </div>
+	<div class="item-secteur">
+	    <div class="div-text-vente">
+	        <h3 class="h3-center">Vente et conseil</h3>
+	        <p>Lorem ipsum dolor sit amet consectetur 
+	        adipisicing elit. Deleniti excepturi quos nesciunt 
+	        cupiditate fugiat nulla, molestiae illum harum consequatur 
+	        cumque repudiandae consequuntur voluptates aliquid voluptate</p>
+	    </div>
+	    <div class="div-img-vente">
+	        <img src="assets/vente.jpeg" alt="" class="img-vente">
+	    </div>
+	</div>
 </div>

@@ -239,6 +239,7 @@ header
     text-align: right;
 }
 
+<<<<<<< HEAD
 .container-secteur
 {
     display: flex;
@@ -343,3 +344,23 @@ header
     width: 100%;
     height: 450px;
 }
+
+/*CONNEXION & INSCRIPTION*/
+.container-page-connexion {
+	position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mdplost a, .newAccount a, .compte a {
+	text-decoration: none;
+	color: black;
+}
+
+.container-inscription {
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+

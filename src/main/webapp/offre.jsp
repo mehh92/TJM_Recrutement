@@ -1,12 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page import="controleur.Offre"%>
+<%@page import="controleur.Controleur"%>
+<%@page import="java.util.ArrayList"%>
 
-</body>
-</html>
+
+<h1>Nos differentes offres</h1>
+
+<% ArrayList<Offre> lesOffres = Controleur.selectAllOffres(); 
+
+for (Offre uneOffre : lesOffres)
+{
+	%>
+	<p> <%=uneOffre.getTitre()%> </p>
+	<p> <%=uneOffre.getLieux()%> </p>
+	<p> <%=uneOffre.getSecteur()%> </p>
+	<p> <%=uneOffre.getSalaire()%> </p>
+	<p> <%=uneOffre.getContrat() %></p>
+	<br>
+	<br>
+	<br>
+	<%
+}
+
+
+%>
+

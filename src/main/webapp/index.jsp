@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="controleur.*" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,23 +21,38 @@
             </div>
             <div class="text-nav">
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Les offres</a></li>
-                    <li><a href="#">Les candidatures</a></li>
+                    <li><a href="index.jsp?page=1">Accueil</a></li>
+                    <li><a href="index.jsp?page=2">Les offres</a></li>
+                    <li><a href="index.jsp?page=3">Les candidatures</a></li>
                     <li><a href="#"><img class="" src="assets/connexion.png" width="50px" height="50px"></a></li>
                     <li><a href="#"><img class="" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
                 </ul>
             </div>
         </div>
     </header>
-
-    <%@ include file="home.jsp"%>
-    
-    <%-- <%@ include file="home.jsp"%> --%>
     
     <%-- <%@ include file="connexion.jsp" %> --%>
     
     <%-- <%@ include file="inscription.jsp" %> --%>
+    
+    <% 
+    
+    int maPage = 1;
+    if(request.getParameter("page")!= null )
+	{
+		maPage = Integer.parseInt(request.getParameter("page"));
+	}
+	
+	switch(maPage)
+	{
+		case 1 :%> <%@ include file="home.jsp" %> <% break;
+		case 2 :%> <%@ include file="offre.jsp" %> <% break;
+		case 3 :%> <%@ include file="candidature.jsp" %> <% break;
+		case 4 : break;
+	}
+    
+    
+    %>
 
     
     

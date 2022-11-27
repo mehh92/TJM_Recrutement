@@ -6,6 +6,13 @@ use tjm;
 
 create table utilisateur (
 	id_user int(5) auto_increment,
+	nom varchar(10),
+	prenom varchar(10),
+	adresse varchar(50),
+	cp varchar(5),
+	ville varchar(50),
+	email varchar(30),
+	tel varchar(10),
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
@@ -52,11 +59,12 @@ ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table offre(
 	id_offre int(5) auto_increment,
-	id_user int(5),
-	PRIMARY KEY (id_offre),
-	FOREIGN KEY (id_user) references recruteur (id_user)
-	on update cascade
-	on delete cascade
+	titre varchar(30),
+	lieux varchar(30),
+	secteur varchar(30),
+	salaire varchar(30),
+	contrat varchar(30),
+	PRIMARY KEY (id_offre)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 

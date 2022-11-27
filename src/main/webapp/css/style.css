@@ -91,6 +91,11 @@ header
     text-decoration: none;
     color: black;
 }
+
+.text-nav a:hover
+{
+	color :#FF745C;
+}
 /*FOOTER*/
 
 .container-footer
@@ -235,7 +240,7 @@ header
     margin-top: 40px;
     margin-bottom: 40px;
     font-size: 40px;
-    margin-right: 380px;
+    margin-right: 335px;
     text-align: right;
 }
 

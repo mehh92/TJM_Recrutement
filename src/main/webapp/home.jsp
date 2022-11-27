@@ -9,7 +9,7 @@
         adipisicing elit. Deleniti excepturi quos nesciunt 
         cupiditate fugiat nulla, molestiae illum harum consequatur 
         cumque repudiandae consequuntur voluptates aliquid voluptate</p>
-        <a href="#"><button>Decouvrez nos offres</button></a>
+        <a href="index.jsp?page=2"><button>Decouvrez nos offres</button></a>
     </div>
 </div>
 

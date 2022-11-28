@@ -1,13 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Inscription</title>
-</head>
-<body>
-
 <div class="container-inscription">
 
 	<div class="form-civilite">
@@ -44,11 +34,6 @@
 	</div>
 	
 	<div class="compte">
-		<a href="connexion.jsp"> <p> Vous avez déjà un compte ? </p></a>
+		<a href="index.jsp?page=4"> <p> Vous avez déjà un compte ? </p></a>
 	</div>
-
-
 </div>
-
-</body>
-</html>

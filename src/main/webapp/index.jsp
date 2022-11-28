@@ -24,14 +24,12 @@
                     <li><a href="index.jsp?page=1">Accueil</a></li>
                     <li><a href="index.jsp?page=2">Les offres</a></li>
                     <li><a href="index.jsp?page=3">Les candidatures</a></li>
-                    <li><a href="#"><img class="" src="assets/connexion.png" width="50px" height="50px"></a></li>
-                    <li><a href="#"><img class="" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
+                    <li><a href="index.jsp?page=4"><img class="" src="assets/connexion.png" width="50px" height="50px"></a></li>
+                    <li><a href="index.jsp?page=6"><img class="" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
                 </ul>
             </div>
         </div>
     </header>
-    
-    <%-- <%@ include file="connexion.jsp" %> --%>
     
     <%-- <%@ include file="inscription.jsp" %> --%>
     
@@ -48,7 +46,9 @@
 		case 1 :%> <%@ include file="home.jsp" %> <% break;
 		case 2 :%> <%@ include file="offre.jsp" %> <% break;
 		case 3 :%> <%@ include file="candidature.jsp" %> <% break;
-		case 4 : break;
+		case 4 :%> <%@ include file="connexion.jsp" %> <% break;
+		case 5 :%> <%@ include file="inscription.jsp" %> <% break;
+		case 6 :%> <%@ include file="home.jsp" %> <% break;
 	}
     
     

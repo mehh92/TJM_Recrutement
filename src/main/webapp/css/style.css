@@ -62,7 +62,7 @@ header
 
 .voiture 
 {
-    width: 200px;
+    width: 160px;
 }
 
 .text-nav
@@ -349,6 +349,15 @@ header
     height: 450px;
 }
 
+/*OFFRE*/
+
+.titre-offre
+{
+	font-size: 40px;
+	margin-top: 60px;
+	padding: 0px 50px;
+}
+
 /*CONNEXION & INSCRIPTION*/
 .container-page-connexion {
 	position: relative;
@@ -367,4 +376,6 @@ header
 	width: 100%;
 	position: relative;
 }
+
+
 

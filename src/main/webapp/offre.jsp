@@ -2,8 +2,9 @@
 <%@page import="controleur.Controleur"%>
 <%@page import="java.util.ArrayList"%>
 
+<link rel="stylesheet" href="css/style.css">
 
-<h1>Nos differentes offres</h1>
+<h1 class="titre-offre">Nos differentes offres</h1>
 
 <% ArrayList<Offre> lesOffres = Controleur.selectAllOffres(); 
 

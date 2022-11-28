@@ -1,13 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Connexion</title>
-</head>
-<body>
-
 <div class="container-page-connexion">
 	<div class="container-item">
 		<div class="email">
@@ -29,12 +19,9 @@
 		</div>
 		
 		<div class="newAccount">
-			<a href="#">
+			<a href="index.jsp?page=5">
 				<p> Vous n'avez pas de compte ? Créez-en un maintenant </p>
 			</a>
 		</div>
 	</div>
 </div>
-
-</body>
-</html>

@@ -30,11 +30,8 @@
             </div>
         </div>
     </header>
-    
-    <%-- <%@ include file="inscription.jsp" %> --%>
-    
+     
     <% 
-    
     int maPage = 1;
     if(request.getParameter("page")!= null )
 	{
@@ -48,14 +45,10 @@
 		case 3 :%> <%@ include file="candidature.jsp" %> <% break;
 		case 4 :%> <%@ include file="connexion.jsp" %> <% break;
 		case 5 :%> <%@ include file="inscription.jsp" %> <% break;
-		case 6 :%> <%@ include file="home.jsp" %> <% break;
+		case 6 : session.invalidate(); response.sendRedirect("index.jsp?page=1"); break;
 	}
-    
-    
     %>
 
-    
-    
   	<footer class="container-footer">
     	<div class="item-entreprise">   
         	<div class="clef">

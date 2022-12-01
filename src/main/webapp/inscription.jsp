@@ -1,39 +1,23 @@
-<div class="container-inscription">
+<%@page import="controleur.Controleur"%>
+<%@page import="controleur.User"%>
+<%@ include file="vue/vue_inscription.jsp" %>
 
-	<div class="form-civilite">
-		<label> Civilité </label>
-		<select name="civilite" id="civilite">
-			<option value="Mr"> Mr </option>
-			<option value="Mme"> Mme </option>
-			<option value="Mlle"> Mlle </option>
-		</select>
-	</div>
-	<div class="form-prenom">
-		<label> Prénom </label>
-		<input type="text" name="prenom" id="prenom"> 
-	</div>
-	<div class="form-nom">
-		<label> Nom </label>
-		<input type="text" name="nom" id="nom"> 
-	</div>
-	<div class="form-telephone">
-		<label> Téléphone </label>
-		<input type=tel name="tel" id="tel"> 
-	</div>
-	<div class="form-email">
-		<label> Email </label>
-		<input type="email" name="email" id="email"> 
-	</div>
-	<div class="form-mdp">
-		<label> Mot de passe </label>
-		<input type="password" name="password" id="password"> 
-	</div>
+<%
+if(request.getParameter("validerInscription") != null)
+{
+	String nom = request.getParameter("nom");
+	String prenom = request.getParameter("prenom");
+	String email = request.getParameter("email");
+	String mdp = request.getParameter("mdp");
 	
-	<div class="button-continuer">
-		<button> Continuer </button>
-	</div>
+	//on instancie la class client
+	User unUserInscri = new User(nom, prenom, email, mdp, "candidat"); 
+	//genere un objet client avec le constructeur surchargé
 	
-	<div class="compte">
-		<a href="index.jsp?page=4"> <p> Vous avez déjà un compte ? </p></a>
-	</div>
-</div>
+	//appel du controleur pour exécuter l'insertion
+	
+	Controleur.insertUser(unUserInscri);
+	out.print("<br> Insertion réussie");
+	
+}
+%>

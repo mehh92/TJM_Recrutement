@@ -9,6 +9,9 @@ ArrayList<Offre> lesOffres = Controleur.selectAllOffres();
 for (Offre uneOffre : lesOffres)
 {
 	%>
+	<a href='index.jsp?page=2&id_offre=<%=uneOffre.getId_offre()%>'>
+	<img src='assets/supprimer.png' height='20' width='20'></a>
+	
 	<p> <%=uneOffre.getTitre()%> </p>
 	<p> N° <%=uneOffre.getId_offre()%> </p>
 	<p> <%=uneOffre.getLieux()%> </p>
@@ -19,7 +22,8 @@ for (Offre uneOffre : lesOffres)
 	<p> <%=uneOffre.getDescription_travail()%> </p>
 	<p> <%=uneOffre.getDescription_mission()%> </p>
 	<p> <em>Posté le <%=uneOffre.getDate_offre()%></em> </p>
-	<!--  <p> <a href="index.jsp?page=7&idoffre= <%=uneOffre.getId_offre()%>">Postuler</a> </p>-->
+	
+	<a href='index.jsp?page=6&id_offre=<%=uneOffre.getId_offre()%>'>Postuler</a> 
 	<br>
 	<br>
 	<br>

@@ -21,11 +21,10 @@ public class Offre {
 		this.description_mission = description_mission;
 	}
 	
-	//Constructeur sans l'attribut date
-	public Offre(int id_offre, String titre, String lieux, String secteur, String salaire, String contrat,
+	//Constructeur sans l'attribut id et date
+	public Offre(String titre, String lieux, String secteur, String salaire, String contrat,
 			String description_personne, String description_travail, String description_mission) {
 		super();
-		this.id_offre = id_offre;
 		this.titre = titre;
 		this.lieux = lieux;
 		this.secteur = secteur;

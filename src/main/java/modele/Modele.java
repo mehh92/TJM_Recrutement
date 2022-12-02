@@ -150,7 +150,7 @@ public class Modele {
 						+uneOffre.getSecteur()+"','"
 						+uneOffre.getSalaire()+"','"
 						+uneOffre.getContrat()+
-						"','DATE_FORMAT(curdate(), \"%d/%m/%Y\")','"
+						"',DATE_FORMAT(curdate(), \"%d/%m/%Y\"),'"
 						+uneOffre.getDescription_personne()+"','"
 						+uneOffre.getDescription_travail()+"','"
 						+uneOffre.getDescription_mission()+"');";

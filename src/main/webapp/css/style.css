@@ -96,6 +96,16 @@ header
 {
 	color :#FF745C;
 }
+
+.nav-img
+{
+  	opacity: .7;
+}
+
+.nav-img:hover
+{
+    opacity: 1;
+}
 /*FOOTER*/
 
 .container-footer

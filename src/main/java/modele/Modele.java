@@ -21,6 +21,7 @@ public class Modele {
 						+unUser.getNom()+"','"
 						+unUser.getPrenom()+"','"
 						+unUser.getEmail()+"','"
+						+unUser.getTel()+"','"
 						+unUser.getMdp()+"','"
 						+unUser.getRole()+"');";
 		try
@@ -52,7 +53,7 @@ public class Modele {
 			{
 				unUser = new User (unResultat.getInt("id_user"), unResultat.getString("nom"),
 						unResultat.getString("prenom"),unResultat.getString("email"),
-						unResultat.getString("mdp"), unResultat.getString("role"));
+						unResultat.getString("tel"),unResultat.getString("mdp"), unResultat.getString("role"));
 			}
 			unStat.execute(requete);
 			unStat.close();
@@ -219,13 +220,17 @@ public class Modele {
 	public static void insertCandidature (Candidature uneCandidature)
 	{
 		String requete = "insert into candidature values (null,'"
-						+uneCandidature.getExperience()+"','"
+						
 						+uneCandidature.getNom()+"','"
 						+uneCandidature.getPrenom()+"','"
 						+uneCandidature.getEmail()+"','"
+						+uneCandidature.getTel()+"','"
+						+uneCandidature.getDate_candidature()+"','"
+						+uneCandidature.getExperience()+"','"
 						+uneCandidature.getDiplome()+"','"
 						+uneCandidature.getMessage()+"','"
-						+uneCandidature.getDate_candidature()+"');";
+						+uneCandidature.getId_user()+"','"
+						+uneCandidature.getId_offre()+"');";
 		try
 		{
 			uneBdd.seConnecter();

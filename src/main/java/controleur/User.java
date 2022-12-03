@@ -3,26 +3,28 @@ package controleur;
 public class User {
 	
 	private int id_user;
-	private String nom, prenom, email, mdp, role;
+	private String nom, prenom, email, tel, mdp, role;
 	
-	public User(int id_user, String nom, String prenom, String email,
+	public User(int id_user, String nom, String prenom, String email, String tel,
 			 String mdp, String role) {
 		super();
 		this.id_user = id_user;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
+		this.tel = tel;
 		this.mdp = mdp;
 		this.role = role;
 	}
 	
-	public User(String nom, String prenom, String email,
+	public User(String nom, String prenom, String email, String tel,
 			 String mdp, String role) {
 		super();
 		this.id_user = 0;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
+		this.tel = tel;
 		this.mdp = mdp;
 		this.role = role;
 	}
@@ -58,6 +60,14 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 
 	public String getMdp() {

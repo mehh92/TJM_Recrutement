@@ -20,6 +20,7 @@ if(request.getParameter("seConnecter") != null)
 		session.setAttribute("email", unUser.getEmail());
 		session.setAttribute("nom", unUser.getNom());
 		session.setAttribute("prenom", unUser.getPrenom());
+		session.setAttribute("tel", unUser.getTel());
 		session.setAttribute("role", unUser.getRole());
 		//recharger la page index.jsp
 		response.sendRedirect("index.jsp?page=1");

@@ -1,5 +1,6 @@
-<%@page import="controleur.Controleur"%>
 <%@page import="controleur.Offre"%>
+<%@page import="controleur.Controleur"%>
+
 
 <h3>Description de l'offre d'emploi</h3>
 <br>

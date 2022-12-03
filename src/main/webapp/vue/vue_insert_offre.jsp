@@ -9,11 +9,11 @@
 	<input type="text" name="salaire">
 	<label> Contrat </label>
 	<input type="text" name="contrat">
-	<label> description_personne </label>
+	<label> Description de la personne </label>
 	<textarea name="description_personne" rows="4" cols="50"></textarea>
-	<label> description_travail </label>
+	<label> Description du travail </label>
 	<textarea name="description_travail" rows="4" cols="50"></textarea>
-	<label> description_mission </label>
+	<label> Description de la mission </label>
 	<textarea name="description_mission" rows="4" cols="50"></textarea>
 	
 	<input type="submit" name="ajouterOffre" value="Ajouter">

@@ -23,10 +23,12 @@ public class Controleur {
 		return Modele.selectAllOffres();
 	}
 	
+	/*
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		return Modele.selectWhereOffre(id_offre);
 	}
+	*/
 	
 	public static void insertOffre(Offre uneOffre)
 	{
@@ -50,4 +52,21 @@ public class Controleur {
 	}
 	
 	/*VUECANDIDATURE*/
+	
+	public static ArrayList<Vuelescandidatures> selectAllCandidatures()
+	{
+		return Modele.selectAllCandidatures();
+	}
+	
+	public static ArrayList<Vuelescandidatures> selectWhereAllCandidatures(int id_user)
+	{
+		return Modele.selectWhereAllCandidatures(id_user);
+	}
+	
+	/*
+	public static Vuelescandidatures selectWhereCandidature(int id_candidature)
+	{
+		return Modele.selectWhereCandidature(id_candidature);
+	}
+	*/
 }

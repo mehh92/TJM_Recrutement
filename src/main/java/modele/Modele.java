@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import controleur.Candidature;
 import controleur.Offre;
 import controleur.User;
+import controleur.Vuelescandidatures;
 
 
 public class Modele {
@@ -101,7 +102,7 @@ public class Modele {
 		}
 		return lesOffres;
 	}
-	
+	/*
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		String requete = "select * from offre where id_offre='"+id_offre+"';";
@@ -131,6 +132,8 @@ public class Modele {
 		}
 		return 	uneOffre;
 	}
+	*/
+	
 	
 	/*public static ArrayList<Offre> selectAllOffres (String mot)
 	{
@@ -215,8 +218,8 @@ public class Modele {
 			System.out.println("impossible d'executer la requete :" + requete);
 		}
 	}
-	/*CANDIDATURE*/
 	
+	/*CANDIDATURE*/
 	public static void insertCandidature (Candidature uneCandidature)
 	{
 		String requete = "insert into candidature values (null,'"
@@ -224,13 +227,13 @@ public class Modele {
 						+uneCandidature.getNom()+"','"
 						+uneCandidature.getPrenom()+"','"
 						+uneCandidature.getEmail()+"','"
-						+uneCandidature.getTel()+"','"
-						+uneCandidature.getDate_candidature()+"','"
-						+uneCandidature.getExperience()+"','"
+						+uneCandidature.getTel()+
+						"',DATE_FORMAT(curdate(), \"%d/%m/%Y\"),"
+						+uneCandidature.getExperience()+",'"
 						+uneCandidature.getDiplome()+"','"
-						+uneCandidature.getMessage()+"','"
-						+uneCandidature.getId_user()+"','"
-						+uneCandidature.getId_offre()+"');";
+						+uneCandidature.getMessage()+"',"
+						+uneCandidature.getId_user()+","
+						+uneCandidature.getId_offre()+");";
 		try
 		{
 			uneBdd.seConnecter();
@@ -262,14 +265,102 @@ public class Modele {
 		}
 	}
 	
-	/*VUECANDIDATURE*/
+	/*VUELESCANDIDATURES*/
+	public static ArrayList<Vuelescandidatures> selectAllCandidatures()
+	{
+		String requete = "select * from vuelescandidatures;";
+		ArrayList<Vuelescandidatures> lesCandidatures = new ArrayList<Vuelescandidatures>();
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			//extraction des Offres
+			ResultSet lesResultats = unStat.executeQuery(requete);
+			while (lesResultats.next())
+			{
+				Vuelescandidatures uneCandidature = new Vuelescandidatures (lesResultats.getInt("id_candidature"), 
+						lesResultats.getInt("id_offre"), lesResultats.getString("titre"),
+						lesResultats.getString("lieux"),lesResultats.getString("contrat"),lesResultats.getString("nom"),
+						lesResultats.getString("prenom"), lesResultats.getString("email"),lesResultats.getString("tel"),
+						lesResultats.getString("date_candidature"),lesResultats.getInt("experience"),
+						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getInt("id_user"));
+				
+				//Ajout du client dans l'ArrayList
+				lesCandidatures.add(uneCandidature);
+			}
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+		return lesCandidatures;
+	}
 	
-	// select where id user
+	public static ArrayList<Vuelescandidatures> selectWhereAllCandidatures(int id_user)
+	{
+		String requete = "select * from vuelescandidatures where id_user='"+id_user+"';";
+		ArrayList<Vuelescandidatures> lesCandidatures = new ArrayList<Vuelescandidatures>();
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			//extraction des Offres
+			ResultSet lesResultats = unStat.executeQuery(requete);
+			while (lesResultats.next())
+			{
+				Vuelescandidatures uneCandidature = new Vuelescandidatures (lesResultats.getInt("id_candidature"), 
+						lesResultats.getInt("id_offre"), lesResultats.getString("titre"),
+						lesResultats.getString("lieux"),lesResultats.getString("contrat"),lesResultats.getString("nom"),
+						lesResultats.getString("prenom"), lesResultats.getString("email"),lesResultats.getString("tel"),
+						lesResultats.getString("date_candidature"),lesResultats.getInt("experience"),
+						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getInt("id_user"));
+				
+				//Ajout du client dans l'ArrayList
+				lesCandidatures.add(uneCandidature);
+			}
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+		return lesCandidatures;
+	}
 	
-	// select *
-	
-	
-	
-	
-	
+	/*
+	public static Vuelescandidatures selectWhereCandidature(int id_candidature)
+	{
+		String requete = "select * from vuelescandidatures where id_candidature='"+id_candidature+"';";
+		Vuelescandidatures uneCandidature = null;
+		
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			//extraction des clients
+			ResultSet unResultat = unStat.executeQuery(requete);
+			if (unResultat.next())
+			{
+				uneCandidature = new Vuelescandidatures (unResultat.getInt("id_candidature"), unResultat.getInt("id_offre"), unResultat.getString("titre"),
+						unResultat.getString("lieux"),unResultat.getString("contrat"),unResultat.getString("nom"),
+						unResultat.getString("prenom"), unResultat.getString("email"),unResultat.getString("tel"),
+						unResultat.getString("date_candidature"),unResultat.getInt("experience"),
+						unResultat.getString("diplome"), unResultat.getString("message"), unResultat.getInt("id_user"));
+			}
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+		return 	uneCandidature;
+	}
+	*/
 }

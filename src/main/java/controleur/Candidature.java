@@ -5,22 +5,37 @@ public class Candidature {
 	private int id_candidature, experience, id_user, id_offre;
 	private String nom, prenom, email, tel, diplome, message, date_candidature;
 	
-	public Candidature(int id_candidature, int experience, String nom, String prenom, String email, String tel, String diplome,
-			String message, String date_candidature, int id_user, int id_offre) {
+	public Candidature(int id_candidature, String nom, String prenom, String email, String tel, String date_candidature, 
+			int experience, String diplome, String message, int id_user, int id_offre) {
 		super();
 		this.id_candidature = id_candidature;
-		this.experience = experience;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.tel = tel;
+		this.date_candidature = date_candidature;
+		this.experience = experience;
 		this.diplome = diplome;
 		this.message = message;
-		this.date_candidature = date_candidature;
 		this.id_user = id_user;
 		this.id_offre = id_offre;
 	}
-
+	
+	//Constructeur sans l'attribut id et date
+	public Candidature(String nom, String prenom, String email, String tel, 
+			int experience, String diplome, String message, int id_user, int id_offre) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.tel = tel;
+		this.experience = experience;
+		this.diplome = diplome;
+		this.message = message;
+		this.id_user = id_user;
+		this.id_offre = id_offre;
+	}
+	
 	public int getId_candidature() {
 		return id_candidature;
 	}

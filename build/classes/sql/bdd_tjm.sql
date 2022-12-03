@@ -17,65 +17,73 @@ create table utilisateur (
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table employe (
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	tel varchar(30),
+	mdp varchar(30),
+	role varchar(30) default 'employe',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table client (
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	tel varchar(30),
+	mdp varchar(30),
+	role varchar(30) default 'client',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table candidat(
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
+	tel varchar(30),
 	mdp varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	role varchar(30) default 'candidat',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table mecanicien (
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
+	tel varchar(30),
 	mdp varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	role varchar(30) default 'mecanicien',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table vendeur (
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
+	tel varchar(30),
 	mdp varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	role varchar(30) default 'vendeur',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
 
 create table recruteur (
-	id_user int(5) auto_increment,
+	id_user int(5),
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
+	tel varchar(30),
 	mdp varchar(30),
-	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
+	role varchar(30) default 'recruteur',
 	PRIMARY KEY (id_user)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
@@ -162,3 +170,30 @@ create table intervention(
 	PRIMARY KEY (id_intervention)
 )
 ENGINE=innodb DEFAULT CHARSET=latin1;
+
+
+/*VIEWS*/
+
+create or replace view VuelesCandidatures as (
+select c.id_candidature, o.id_offre, o.titre, o.lieux, o.contrat,
+c.nom, c.prenom, c.email, c.tel, c.date_candidature, c.experience,
+c.diplome, c.message, c.id_user
+from offre o, candidature c
+where o.id_offre = c.id_offre
+);
+
+/*TRIGGERS*/
+
+drop trigger if exists InsertUtilisateurToCandidat;
+delimiter //
+CREATE TRIGGER InsertUtilisateurToCandidat
+ after insert on utilisateur
+ for each row
+ begin
+ if (new.role = 'candidat')
+    then
+        insert into candidat (id_user, nom, prenom, email, tel, mdp, role) values (new.id_user, new.nom, new.prenom, new.email, new.tel, new.mdp, new.role);
+    end if;
+ END //
+Delimiter ;
+

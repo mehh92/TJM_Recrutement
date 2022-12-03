@@ -17,6 +17,7 @@ if(request.getParameter("seConnecter") != null)
 	else
 	{
 		//connexion réussie, on démarre la session.
+		session.setAttribute("id_user", unUser.getId_user());
 		session.setAttribute("email", unUser.getEmail());
 		session.setAttribute("nom", unUser.getNom());
 		session.setAttribute("prenom", unUser.getPrenom());

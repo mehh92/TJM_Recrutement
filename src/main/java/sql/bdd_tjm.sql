@@ -9,6 +9,7 @@ create table utilisateur (
 	nom varchar(10),
 	prenom varchar(10),
 	email varchar(30),
+	tel varchar(30),
 	mdp varchar(30),
 	role enum ('candidat', 'client', 'employe', 'vendeur', 'recruteur', 'mecanicien'),
 	PRIMARY KEY (id_user)
@@ -99,6 +100,7 @@ create table candidature (
 	nom varchar(20),
 	prenom varchar(20),
 	email varchar(30),
+	tel varchar(30),
 	date_candidature varchar(30),
 	experience int(2),
 	diplome varchar(30),

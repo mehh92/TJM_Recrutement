@@ -11,6 +11,10 @@
 		<label> Email </label>
 		<input type="email" name="email" id="email"> 
 	</div>
+	<div class="form-tel">
+		<label> Tel </label>
+		<input type="tel" name="tel" id="tel"> 
+	</div>
 	<div class="form-mdp">
 		<label> Mot de passe </label>
 		<input type="password" name="mdp" id="mdp"> 

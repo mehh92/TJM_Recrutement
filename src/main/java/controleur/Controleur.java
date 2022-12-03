@@ -23,6 +23,11 @@ public class Controleur {
 		return Modele.selectAllOffres();
 	}
 	
+	public static Offre selectWhereOffre(int id_offre)
+	{
+		return Modele.selectWhereOffre(id_offre);
+	}
+	
 	public static void insertOffre(Offre uneOffre)
 	{
 		Modele.insertOffre(uneOffre);

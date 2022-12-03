@@ -101,6 +101,36 @@ public class Modele {
 		return lesOffres;
 	}
 	
+	public static Offre selectWhereOffre(int id_offre)
+	{
+		String requete = "select * from offre where id_offre='"+id_offre+"';";
+		Offre uneOffre = null;
+		
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			//extraction des clients
+			ResultSet unResultat = unStat.executeQuery(requete);
+			if (unResultat.next())
+			{
+				uneOffre = new Offre (unResultat.getInt("id_offre"), unResultat.getString("titre"),
+						unResultat.getString("lieux"),unResultat.getString("secteur"),
+						unResultat.getString("salaire"), unResultat.getString("contrat"),
+						unResultat.getString("date_offre"),unResultat.getString("description_personne"),
+						unResultat.getString("description_travail"),unResultat.getString("description_mission"));
+			}
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+		return 	uneOffre;
+	}
+	
 	/*public static ArrayList<Offre> selectAllOffres (String mot)
 	{
 		ArrayList<Offre> lesOffres = new ArrayList<Offre>(); 

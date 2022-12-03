@@ -25,7 +25,7 @@
                     <li><a href="index.jsp?page=2">Les offres</a></li>
                     <li><a href="index.jsp?page=3">Les candidatures</a></li>
                     <li><a href="index.jsp?page=4"><img class="nav-img" src="assets/connexion.png" width="50px" height="50px"></a></li>
-                    <li><a href="index.jsp?page=7"><img class="nav-img" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
+                    <li><a href="index.jsp?page=8"><img class="nav-img" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +46,8 @@
 		case 4 :%> <%@ include file="connexion.jsp" %> <% break;
 		case 5 :%> <%@ include file="inscription.jsp" %> <% break;
 		case 6 :%> <%@ include file="description_offre.jsp" %> <% break;
-		case 7 : session.invalidate(); response.sendRedirect("index.jsp?page=1"); break;
+		case 7 :%> <%@ include file="insertcandidature.jsp" %> <% break;
+		case 8 : session.invalidate(); response.sendRedirect("index.jsp?page=1"); break;
 	}
     %>
 

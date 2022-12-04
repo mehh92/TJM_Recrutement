@@ -1,6 +1,9 @@
 <%@page import="controleur.Offre"%>
 <%@page import="controleur.Controleur"%>
 
+<div class="imgOffre">
+	<img src="assets/atelier.jpeg">
+</div>
 
 <div>
 	<h1 class="titre-descriptionOffre mt-3 ms-2"><%=uneOffre.getTitre()%></h1>

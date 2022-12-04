@@ -5,6 +5,9 @@
 <%if(session.getAttribute("role") != null && session.getAttribute("role").equals("recruteur"))
 {
 %>
+<div class="imgCandidature">
+	<img src="assets/entretien.jpg">
+</div>
 <div class="d-block">
 <h1 class="titre-les-candidatures">Les candidatures</h1>
 
@@ -66,6 +69,9 @@
 else if(session.getAttribute("role") != null && session.getAttribute("role").equals("candidat"))
 {
 	%>
+<div class="imgCandidature">
+	<img src="assets/entretien.jpg">
+</div>
 <div class="d-block">
 	<h1 class="titre-les-candidatures">Vos candidatures</h1>
 	
@@ -77,11 +83,14 @@ else if(session.getAttribute("role") != null && session.getAttribute("role").equ
 	for (Vuelescandidatures uneCandidature : lesCandidatures)
 	{
 		%>
-		<div class="container border-1 border-dark border mb-3">
-			<div class="d-flex mt-5">
-				<h3 class=" flex-fill me-4"><%=uneCandidature.getTitre()%> <em>Réf : <%=uneCandidature.getId_offre()%></em></h3>
-				<p class="flex-fill me-4"> lieu : <%=uneCandidature.getLieux()%>  <br> Contrat : <%=uneCandidature.getContrat()%> </p>
-				<div class="flex-fill float-end">	
+		<div class="container border-1 border-dark border mb-3 mt-5">
+			<div class="d-flex mt-3">
+				<h3 class="titreCandidature"><%=uneCandidature.getTitre()%> - <%=uneCandidature.getContrat()%>
+				<i>(<%=uneCandidature.getLieux()%>) </i></h3>
+			<div class="ms-5 col-2">
+				<p>Référence de l'offre : <%=uneCandidature.getId_offre()%></p>
+			</div>
+				<div class="text-end col-6">	
 					<a href='index.jsp?page=3&action=sup&id_candidature=<%=uneCandidature.getId_candidature()%>'>
 					<img src='assets/supprimer.png' height='20' width='20'></a>
 					
@@ -94,20 +103,28 @@ else if(session.getAttribute("role") != null && session.getAttribute("role").equ
 			</div>
 			<div class="d-flex p-3">
 				<div class="d-block col">
-					<p> <%=uneCandidature.getNom()%> </p>
-					<p> <%=uneCandidature.getPrenom()%> </p>
-					<p> <%=uneCandidature.getEmail()%> </p>
-					<p> <%=uneCandidature.getTel()%> </p>
+					<h3> Informations personnelles </h3>
+					<p> Nom : <%=uneCandidature.getNom()%> </p>
+					<p> Prénom : <%=uneCandidature.getPrenom()%> </p>
+					<p> Email : <%=uneCandidature.getEmail()%> </p>
+					<p> Téléphone : <%=uneCandidature.getTel()%> </p>
 				</div>
 				<div class="d-block col">
-					<p> <%=uneCandidature.getExperience()%> </p>
-					<p> <%=uneCandidature.getDiplome()%> </p>
-					<p> <%=uneCandidature.getMessage()%> </p>
+					<h3> Expérience & diplôme </h3>
+					<p> Année d'expérience sur le poste : <%=uneCandidature.getExperience()%> </p>
+					<p> Dernier diplôme obtenu : <%=uneCandidature.getDiplome()%> </p>
+					
 				</div>
 				<div class="d-block col">
+					<h3> Informations sur la candidature </h3>
 					<p> <%=uneCandidature.getDate_candidature()%> </p>
-					<p><em> <%=uneCandidature.getStatut()%></em> </p>
+					<p><%=uneCandidature.getStatut()%></p>
 				</div>
+				
+			</div>
+			<div class="d-block boxsizingBorder">
+				<h3 class="msg"> Message à destination du recruteur </h3>
+				<textarea name="msg" <%=uneCandidature.getMessage()%>> </textarea>
 			</div>
 		</div>
 </div>

@@ -1,26 +1,35 @@
 <%@page import="controleur.Offre"%>
 <%@page import="controleur.Controleur"%>
 
-<h1><%=uneOffre.getTitre()%></h1>
 
-<h3>Description de l'offre d'emploi</h3>
-<br>
-<h4>Description de l'entreprise</h4>
-<br>
-<p>khfksdhgfskjfgksjfgsdfjsqgfdgsfjhfgsjhfgsjhfgsjhfdgdsfskfdhsfd</p>
-<br>
-<h4>L'offre d'emploi en détail</h4>
-<br>
-<h5>Le profil recherché</h5>
-<br>
-<p><%=uneOffre.getDescription_personne()%></p>
-<br>
-<h5>Description du travail</h5>
-<br>
-<p><%=uneOffre.getDescription_travail()%></p>
-<br>
-<h5>Description de la mission</h5>
-<br>
-<p><%=uneOffre.getDescription_mission()%></p>
-<br>
-<a href='index.jsp?page=7&id_offre=<%=uneOffre.getId_offre()%>'> Postuler</a>
+<div>
+	<h1 class="titre-descriptionOffre mt-3 ms-2"><%=uneOffre.getTitre()%></h1>
+
+<div class="containerPoste">
+	<div class="descriptionPoste">
+		<h3>Description du poste</h3>
+	</div>
+	<div class="mt-3">
+		<h3>Description de l'entreprise</h4>
+		<p>khfksdhgfskjfgksjfgsdfjsqgfdgsfjhfgsjhfgsjhfgsjhfdgdsfskfdhsfd</p>
+	</div>
+	<div class="mt-5">
+		<h3>L'offre d'emploi en détail</h4>
+	</div>
+	<div class="mt-5">
+		<h3>Le profil recherché</h5>
+		<p><%=uneOffre.getDescription_personne()%></p>
+	</div>
+	<div class="mt-5">
+		<h3>Description du travail</h5>
+		<p><%=uneOffre.getDescription_travail()%></p>
+	</div>
+	<div class="mt-5">
+		<h3>Description de la mission</h5>
+		<p><%=uneOffre.getDescription_mission()%></p>
+	</div>
+	<div class="mt-5 button-postuler">
+		<a href='index.jsp?page=7&id_offre=<%=uneOffre.getId_offre()%>'> Postuler</a>
+	</div>
+</div>
+</div>

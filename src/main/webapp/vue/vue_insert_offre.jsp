@@ -1,3 +1,5 @@
+<h1 class="titre-insert-offre">Insérer une offre</h1>
+
 <form method=post>
 	<label> Titre </label>
 	<input type="text" name="titre"> 

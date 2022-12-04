@@ -23,12 +23,11 @@ public class Controleur {
 		return Modele.selectAllOffres();
 	}
 	
-	/*
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		return Modele.selectWhereOffre(id_offre);
 	}
-	*/
+	
 	
 	public static void insertOffre(Offre uneOffre)
 	{
@@ -51,6 +50,16 @@ public class Controleur {
 		Modele.deleteCandidature(id_candidature);
 	}
 	
+	public static void updateCandidatureValide(int id_candidature)
+	{
+		Modele.updateCandidatureValide(id_candidature);
+	}
+	
+	public static void updateCandidatureNonValide (int id_candidature)
+	{
+		Modele.updateCandidatureNonValide(id_candidature);
+	}
+	
 	/*VUECANDIDATURE*/
 	
 	public static ArrayList<Vuelescandidatures> selectAllCandidatures()
@@ -62,11 +71,5 @@ public class Controleur {
 	{
 		return Modele.selectWhereAllCandidatures(id_user);
 	}
-	
-	/*
-	public static Vuelescandidatures selectWhereCandidature(int id_candidature)
-	{
-		return Modele.selectWhereCandidature(id_candidature);
-	}
-	*/
+
 }

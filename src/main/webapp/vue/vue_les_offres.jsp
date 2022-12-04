@@ -2,16 +2,24 @@
 <%@page import="controleur.Offre"%>
 <%@page import="controleur.Controleur"%>
 
+<h1 class="titre-les-offre">Nos differentes offres</h1>
+
 <%
 
 ArrayList<Offre> lesOffres = Controleur.selectAllOffres();
 
 for (Offre uneOffre : lesOffres)
 {
+	
+	if(session.getAttribute("role") != null && session.getAttribute("role") == "recruteur")
+	{ 
 	%>
+	
 	<a href='index.jsp?page=2&id_offre=<%=uneOffre.getId_offre()%>'>
 	<img src='assets/supprimer.png' height='20' width='20'></a>
-	
+	<% 
+	}
+	%>
 	<p> <%=uneOffre.getTitre()%> </p>
 	<p> N° <%=uneOffre.getId_offre()%> </p>
 	<p> <%=uneOffre.getLieux()%> </p>

@@ -113,6 +113,7 @@ create table candidature (
 	experience int(2),
 	diplome varchar(30),
 	message longtext,
+	statut varchar(30) default 'En cour de traitement',
 	id_user int(5),
 	id_offre int(5),
 	PRIMARY KEY (id_candidature),
@@ -177,7 +178,7 @@ ENGINE=innodb DEFAULT CHARSET=latin1;
 create or replace view VuelesCandidatures as (
 select c.id_candidature, o.id_offre, o.titre, o.lieux, o.contrat,
 c.nom, c.prenom, c.email, c.tel, c.date_candidature, c.experience,
-c.diplome, c.message, c.id_user
+c.diplome, c.message, c.statut, c.id_user
 from offre o, candidature c
 where o.id_offre = c.id_offre
 );

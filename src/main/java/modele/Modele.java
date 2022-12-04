@@ -102,7 +102,7 @@ public class Modele {
 		}
 		return lesOffres;
 	}
-	/*
+	
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		String requete = "select * from offre where id_offre='"+id_offre+"';";
@@ -132,49 +132,6 @@ public class Modele {
 		}
 		return 	uneOffre;
 	}
-	*/
-	
-	
-	/*public static ArrayList<Offre> selectAllOffres (String mot)
-	{
-		ArrayList<Offre> lesOffres = new ArrayList<Offre>(); 
-		String requete = ""; 
-		if (mot.equals(""))
-		{
-			requete = "select * from offre;"; 
-		} else {
-			requete = "select * from offre where titre like '%"+mot+"%' or lieux like '%"+mot+"%' " 
-				  +	" or secteur like '%"+mot+"%' ;";
-		}
-		try {
-			uneBdd.seConnecter();
-			Statement unStat = uneBdd.getMaConnexion().createStatement(); //curseur 
-			ResultSet desResultats = unStat.executeQuery(requete); //fetchAll de PHP 
-			//parcours des résultats pour construire les instances de clients 
-			while (desResultats.next()) //tant qu'il y a un résultat suivant 
-			{
-				//instancier la classe client : créer un objet client
-				Offre unClient = new Offre (
-						desResultats.getInt("idclient"),  desResultats.getString ("nom"), 
-						desResultats.getString ("siret"), desResultats.getString ("tel"),
-						desResultats.getString ("email"), desResultats.getString ("adresse"),
-						desResultats.getString ("CP"), desResultats.getString ("ville")
-						
-						);
-				//On ajoute cet objet à la liste des clients 
-				lesClients.add(unClient);
-			}
-			unStat.close(); 
-			uneBdd.seDeConnecter();
-		}
-		catch (SQLException exp)
-		{
-			System.out.println("Erreur execution requete : " + requete);
-		}
-		
-		return lesClients; 
-	}
-	*/
 	
 	public static void insertOffre (Offre uneOffre)
 	{
@@ -231,9 +188,45 @@ public class Modele {
 						"',DATE_FORMAT(curdate(), \"%d/%m/%Y\"),"
 						+uneCandidature.getExperience()+",'"
 						+uneCandidature.getDiplome()+"','"
-						+uneCandidature.getMessage()+"',"
+						+uneCandidature.getMessage()+"',default,"
 						+uneCandidature.getId_user()+","
 						+uneCandidature.getId_offre()+");";
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+	}
+	
+	public static void updateCandidatureValide(int id_candidature)
+	{
+		String requete = "update candidature set statut = 'Approuvée' where id_candidature ="+id_candidature+";";
+	
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+	}
+	
+	public static void updateCandidatureNonValide(int id_candidature)
+	{
+		String requete = "update candidature set statut = 'Non retenu' where id_candidature ="+id_candidature+";";
+	
 		try
 		{
 			uneBdd.seConnecter();
@@ -283,7 +276,8 @@ public class Modele {
 						lesResultats.getString("lieux"),lesResultats.getString("contrat"),lesResultats.getString("nom"),
 						lesResultats.getString("prenom"), lesResultats.getString("email"),lesResultats.getString("tel"),
 						lesResultats.getString("date_candidature"),lesResultats.getInt("experience"),
-						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getInt("id_user"));
+						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getString("statut"),
+						lesResultats.getInt("id_user"));
 				
 				//Ajout du client dans l'ArrayList
 				lesCandidatures.add(uneCandidature);
@@ -316,7 +310,8 @@ public class Modele {
 						lesResultats.getString("lieux"),lesResultats.getString("contrat"),lesResultats.getString("nom"),
 						lesResultats.getString("prenom"), lesResultats.getString("email"),lesResultats.getString("tel"),
 						lesResultats.getString("date_candidature"),lesResultats.getInt("experience"),
-						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getInt("id_user"));
+						lesResultats.getString("diplome"), lesResultats.getString("message"), lesResultats.getString("statut"), 
+						lesResultats.getInt("id_user"));
 				
 				//Ajout du client dans l'ArrayList
 				lesCandidatures.add(uneCandidature);
@@ -332,35 +327,4 @@ public class Modele {
 		return lesCandidatures;
 	}
 	
-	/*
-	public static Vuelescandidatures selectWhereCandidature(int id_candidature)
-	{
-		String requete = "select * from vuelescandidatures where id_candidature='"+id_candidature+"';";
-		Vuelescandidatures uneCandidature = null;
-		
-		try
-		{
-			uneBdd.seConnecter();
-			Statement unStat = uneBdd.getMaConnexion().createStatement();
-			//extraction des clients
-			ResultSet unResultat = unStat.executeQuery(requete);
-			if (unResultat.next())
-			{
-				uneCandidature = new Vuelescandidatures (unResultat.getInt("id_candidature"), unResultat.getInt("id_offre"), unResultat.getString("titre"),
-						unResultat.getString("lieux"),unResultat.getString("contrat"),unResultat.getString("nom"),
-						unResultat.getString("prenom"), unResultat.getString("email"),unResultat.getString("tel"),
-						unResultat.getString("date_candidature"),unResultat.getInt("experience"),
-						unResultat.getString("diplome"), unResultat.getString("message"), unResultat.getInt("id_user"));
-			}
-			unStat.execute(requete);
-			unStat.close();
-			uneBdd.seDeconnecter();
-		}
-		catch(SQLException exp)
-		{
-			System.out.println("impossible d'executer la requete :" + requete);
-		}
-		return 	uneCandidature;
-	}
-	*/
 }

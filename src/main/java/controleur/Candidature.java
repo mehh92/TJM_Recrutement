@@ -3,10 +3,10 @@ package controleur;
 public class Candidature {
 
 	private int id_candidature, experience, id_user, id_offre;
-	private String nom, prenom, email, tel, diplome, message, date_candidature;
+	private String nom, prenom, email, tel, diplome, message, date_candidature, statut;
 	
 	public Candidature(int id_candidature, String nom, String prenom, String email, String tel, String date_candidature, 
-			int experience, String diplome, String message, int id_user, int id_offre) {
+			int experience, String diplome, String message, String statut, int id_user, int id_offre) {
 		super();
 		this.id_candidature = id_candidature;
 		this.nom = nom;
@@ -17,11 +17,12 @@ public class Candidature {
 		this.experience = experience;
 		this.diplome = diplome;
 		this.message = message;
+		this.statut = statut;
 		this.id_user = id_user;
 		this.id_offre = id_offre;
 	}
 	
-	//Constructeur sans l'attribut id et date
+	//Constructeur sans l'attribut id / date / statut
 	public Candidature(String nom, String prenom, String email, String tel, 
 			int experience, String diplome, String message, int id_user, int id_offre) {
 		super();
@@ -106,6 +107,14 @@ public class Candidature {
 
 	public void setDate_candidature(String date_candidature) {
 		this.date_candidature = date_candidature;
+	}
+	
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 	public int getId_user() {

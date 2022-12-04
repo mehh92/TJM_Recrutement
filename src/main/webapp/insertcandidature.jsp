@@ -1,6 +1,5 @@
 <%@page import="controleur.Controleur"%>
 <%@page import="controleur.Candidature"%>
-<h1>Formulaire de candidature</h1>
 
 <%@ include file="vue/vue_insert_candidature.jsp" %>
 

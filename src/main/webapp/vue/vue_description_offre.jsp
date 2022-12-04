@@ -1,6 +1,7 @@
 <%@page import="controleur.Offre"%>
 <%@page import="controleur.Controleur"%>
 
+<h1><%=uneOffre.getTitre()%></h1>
 
 <h3>Description de l'offre d'emploi</h3>
 <br>

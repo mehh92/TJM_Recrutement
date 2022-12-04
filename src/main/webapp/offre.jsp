@@ -1,7 +1,13 @@
+<%
+if(session.getAttribute("role") != null && session.getAttribute("role").equals("recruteur"))
+{
+%> 
 
-<h1 class="titre-insert-offre">Insérer une offre</h1>
+<%@ include file="vue/vue_insert_offre.jsp" %> 
 
-<%@ include file="vue/vue_insert_offre.jsp" %>
+<% 
+}
+%>
 
 <% if(request.getParameter("ajouterOffre") != null)
 {
@@ -24,8 +30,6 @@
 	out.print("<br> Insertion réussie");
 }
 %>
-
-<h1 class="titre-les-offre">Nos differentes offres</h1>
 
 <%@ include file="vue/vue_les_offres.jsp" %>
 

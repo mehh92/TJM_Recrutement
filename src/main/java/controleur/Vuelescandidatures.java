@@ -6,11 +6,11 @@ public class Vuelescandidatures {
 	private int id_offre;
 	private String titre, lieux, contrat, nom, prenom, email, tel, date_candidature;
 	private int experience;
-	private String diplome, message;
+	private String diplome, message, statut;
 	private int id_user;
 	
 	public Vuelescandidatures(int id_candidature, int id_offre, String titre, String lieux, String contrat, String nom, String prenom,
-			String email, String tel, String date_candidature, int experience, String diplome, String message, int id_user) {
+			String email, String tel, String date_candidature, int experience, String diplome, String message, String statut, int id_user) {
 		super();
 		this.id_candidature = id_candidature;
 		this.id_offre = id_offre;
@@ -25,6 +25,7 @@ public class Vuelescandidatures {
 		this.experience = experience;
 		this.diplome = diplome;
 		this.message = message;
+		this.statut = statut;
 		this.id_user = id_user;
 	}
 
@@ -132,6 +133,15 @@ public class Vuelescandidatures {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public String getStatut() {
+		return statut;
+	}
+
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 	public int getId_user() {

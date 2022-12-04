@@ -1,3 +1,5 @@
+<h1>Formulaire de candidature</h1>
+
 <form method="post">
 <h2>Informations personnelles</h2>
 	<div class="form-nom">

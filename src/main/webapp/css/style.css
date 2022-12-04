@@ -387,27 +387,5 @@ header
 	position: relative;
 }
 
-/***
-	CANDIDATURE
-***/
-.container {
-	width: 95%;
-	margin: auto;
-}
-
-.titre-les-candidatures {
-	margin-left: 20px;
-	margin-top: 25px;
-}
-
-.imgPostuler {
-	width: 100%;
-	height: 100%;
-}
-
-.info-perso {
-	margin-top: 50px;
-}
-
 
 

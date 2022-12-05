@@ -23,8 +23,9 @@ if(request.getParameter("seConnecter") != null)
 		session.setAttribute("prenom", unUser.getPrenom());
 		session.setAttribute("tel", unUser.getTel());
 		session.setAttribute("role", unUser.getRole());
-		//recharger la page index.jsp
+		//recharger la page index.jsp ou la page candidature
 		response.sendRedirect("index.jsp?page=1");
+	
 	}
 }
 

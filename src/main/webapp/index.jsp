@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.tribes.ChannelSender"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="utf8"%>
 <%@ page import="controleur.*" %>

@@ -5,7 +5,7 @@ body
 	margin : 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Poppins-light";
+	font-family: "Poppins-light"!important;
 } 
 
 /*FONTS*/
@@ -90,11 +90,7 @@ header
 {
     text-decoration: none;
     color: black;
-}
-
-.text-nav a:hover
-{
-	color :#FF745C;
+    display : inline;
 }
 
 .nav-img
@@ -118,7 +114,6 @@ header
     justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 100px;
 }
 
 .item-entreprise 
@@ -369,22 +364,109 @@ header
 }
 
 /*CONNEXION & INSCRIPTION*/
-.container-page-connexion {
-	position: relative;
-    width: 100%;
+
+.border-connexion
+{
+    width: 35%;
+    height: 500px;
+    margin: 145px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgb(0 0 0 / 30%);
+}
+
+.btn-connexion
+{
+    display: block;
+    border: 1px solid #385B64;
+    color: #fff;
+    background: #385B64;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 135px;
+    height: 40px;
+}
+
+.lien-connexion
+{
+    text-decoration: none;
+    color: black;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.margin-label
+{
+    margin-bottom: 5px;
+}
+
+.champ-email
+{
+    margin-bottom: 20px;
+}
+
+.champ-mdp
+{
+    margin-bottom: 10px
+}
+
+.sign-in
+{
+    display: block;
     text-align: center;
-    margin-top: 50px;
 }
 
-.mdplost a, .newAccount a, .compte a {
-	text-decoration: none;
-	color: black;
+.img-pouce
+{
+    width: 170px;
+    display: block;
+    bottom: 10px;
+    margin: 10px auto;
 }
 
-.container-inscription {
-	text-align: center;
-	width: 100%;
-	position: relative;
+
+.margin-input-inscription
+{
+    margin-bottom: 15px;
+}
+
+.margin-input-mdp
+{
+    margin-bottom: 40px;
+}
+
+.margin-btn-connexion
+{
+    margin-bottom: 20px;
+
+}
+
+.border-inscription
+{
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgb(0 0 0 / 30%);
+}
+
+.container-inscription
+{
+    display: flex;
+    width: 60%;
+    margin: 130px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.item
+{
+    width: 50%;
+}
+
+.item img
+{
+    width: 100%;
 }
 
 /***

@@ -6,7 +6,7 @@
 {
 %>
 <div class="imgCandidature">
-	<img src="assets/entretien.jpg">
+	<img src="assets/entretien.png">
 </div>
 <div class="d-block">
 <h1 class="titre-les-candidatures">Les candidatures</h1>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="d-block boxsizingBorder">
 				<h3 class="msg"> Message à destination du recruteur </h3>
-				<textarea name="msg" <%=uneCandidature.getMessage()%>> </textarea>
+				<textarea name="msg" disabled><%=uneCandidature.getMessage()%></textarea>
 			</div>
 		</div>
 </div>
@@ -124,7 +124,7 @@ else if(session.getAttribute("role") != null && session.getAttribute("role").equ
 			</div>
 			<div class="d-block boxsizingBorder">
 				<h3 class="msg"> Message à destination du recruteur </h3>
-				<textarea name="msg" <%=uneCandidature.getMessage()%>> </textarea>
+				<textarea name="msg" disabled><%=uneCandidature.getMessage()%></textarea>
 			</div>
 		</div>
 </div>

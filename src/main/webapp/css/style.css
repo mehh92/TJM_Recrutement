@@ -114,6 +114,7 @@ header
     justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-top : 160px;
 }
 
 .item-entreprise 
@@ -356,11 +357,101 @@ header
 
 /*OFFRE*/
 
-.titre-offre
+.titre-les-offre
 {
-	font-size: 40px;
-	margin-top: 60px;
-	padding: 0px 50px;
+    margin-left: 45px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.titre-insert-offre
+{
+	margin-left: 45px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.card
+{
+    width: 24rem;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 30%);
+    border-radius: 10px!important;
+    margin: 0px 25px 25px 50px;
+}
+
+.card:hover
+{
+    background-color: #F9F9F9;
+}
+
+.card-body
+{
+    position: relative;
+}
+
+.card-title
+{
+    display: inline;
+    cursor: pointer; 
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.lien-card-title
+{
+	text-decoration: none;
+    color: black;
+}
+
+.date-position
+{
+    display: block;
+    margin-top: 10px!important;
+    margin-bottom: 15px!important;
+}
+
+.ref-position
+{
+    position: absolute;
+    top: 52px;
+    left: 143px;
+}
+
+.card-text
+{
+    margin-bottom: 2px;
+}
+
+.p-fin-card
+{
+    display: inline;
+}
+
+.fleche-card
+{
+    width: 25px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer; 
+}
+
+.supr-offre
+{
+	width: 25px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.container-card
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
 }
 
 /*CONNEXION & INSCRIPTION*/

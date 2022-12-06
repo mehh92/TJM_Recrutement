@@ -36,14 +36,14 @@
 	
 			<div class="form-group">
 				<label class="margin-label" for="mdp">Dernier diplome obtenu :</label>
-				<input type="text" class="form-control margin-input-postuler" name="diplome" id="diplome" placeholder="Votre dernier diplome">
+				<input type="text" class="form-control margin-input-postuler-end" name="diplome" id="diplome" placeholder="Votre dernier diplome">
 			</div>
 
 			<h2 class="titre-postuler">Vos motivations</h2>
 
 			<div class="form-group">
 				<label class="margin-label" for="message">Message :</label>
-				<textarea class="form-control margin-input-postuler" name="message" rows="4" cols="50" placeholder="Votre message"></textarea>
+				<textarea class="d-block w-100" name="message" rows="4" cols="50" placeholder="Votre message"></textarea>
 			</div>
 	
 			<input type="submit" name="ajouterCandidature" class="btn-formulaire margin-btn-formulaire" value="Soumettre"></input>

@@ -26,9 +26,9 @@
             </div>
             <div class="text-nav">
                 <ul>
-                    <li><a href="index.jsp?page=1">Accueil</a></li>
-                    <li><a href="index.jsp?page=2">Les offres</a></li>
-                    <li><a href="index.jsp?page=3">Les candidatures</a></li>
+                    <li><a class="effect" href="index.jsp?page=1">Accueil</a></li>
+                    <li><a class="effect" href="index.jsp?page=2">Les offres</a></li>
+                    <li><a class="effect" href="index.jsp?page=3">Les candidatures</a></li>
                     <li><a href="index.jsp?page=4"><img class="nav-img" src="assets/connexion.png" width="50px" height="50px"></a></li>
                     <li><a href="index.jsp?page=8"><img class="nav-img" src="assets/deconnexion.png" width="50px" height="50px"></a></li>
                 </ul>
@@ -83,8 +83,8 @@
        </div>
     </footer>
     
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
 </body>
 </html>

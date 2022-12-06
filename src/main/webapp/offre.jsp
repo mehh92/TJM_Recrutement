@@ -25,9 +25,9 @@ if(session.getAttribute("role") != null && session.getAttribute("role").equals("
 	//genere un objet client avec le constructeur surchargé
 	
 	//appel du controleur pour exécuter l'insertion
-	
 	Controleur.insertOffre(uneOffre);
 	out.print("<br> Insertion réussie");
+	
 }
 %>
 

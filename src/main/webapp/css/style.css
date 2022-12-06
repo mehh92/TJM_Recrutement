@@ -183,8 +183,8 @@ header
 
 .titre-accueil-1
 {
-	margin-top: 110px;
-    margin-bottom: 40px;
+	margin-top: 70px;
+    margin-bottom: 70px;
     display: block;
     font-size: 40px;
     text-align: center;
@@ -243,8 +243,7 @@ header
 
 .titre-accueil-2
 {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 70px;
     font-size: 40px;
     margin-right: 20%;
     text-align: right;
@@ -364,13 +363,6 @@ header
     margin-bottom: 50px;
 }
 
-.titre-insert-offre
-{
-	margin-left: 45px;
-    margin-top: 45px;
-    margin-bottom: 50px;
-}
-
 .card
 {
     width: 24rem;
@@ -434,6 +426,12 @@ header
     right: 20px;
     bottom: 20px;
     cursor: pointer; 
+    transition : 2s ease in out
+}
+
+.fleche-card:hover
+{
+	transform : rotate(1turn);
 }
 
 .supr-offre
@@ -466,7 +464,7 @@ header
     box-shadow: 0px 1px 2px rgb(0 0 0 / 30%);
 }
 
-.btn-connexion
+.btn-formulaire
 {
     display: block;
     border: 1px solid #385B64;
@@ -526,10 +524,9 @@ header
     margin-bottom: 40px;
 }
 
-.margin-btn-connexion
+.margin-btn-formulaire
 {
     margin-bottom: 20px;
-
 }
 
 .border-inscription
@@ -575,15 +572,6 @@ header
 .titre-les-candidatures {
 	margin-left: 20px;
 	margin-top: 25px;
-}
-
-.imgPostuler {
-	width: 100%;
-	height: 100%;
-}
-
-.info-perso {
-	margin-top: 50px;
 }
 
 .titreCandidature, .msg, .boxsizingBorder textarea {
@@ -644,5 +632,58 @@ header
     margin: auto;
 }
 
+/*INSERT CANDIDATURE*/
+
+.titre-formulaire-candidature
+{
+    margin-left: 45px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.titre-postuler {
+	margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.margin-input-postuler
+{
+    margin-bottom: 15px;
+}
+
+.border-postuler
+{
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px rgb(0 0 0 / 30%);
+}
+
+.container-insert-candidature
+{
+    display: flex;
+    width: 90%;
+    margin: 0px auto 130px;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-insert-candidature
+{
+    width: 50%;
+}
+
+.item-insert-candidature img
+{
+    width: 100%;
+}
 
 
+/*INSERT OFFRE*/
+
+.titre-insert-offre
+{
+	margin-left: 45px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}

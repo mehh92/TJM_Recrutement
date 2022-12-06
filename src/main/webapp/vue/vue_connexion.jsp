@@ -11,7 +11,7 @@
 
 	<a class="lien-connexion" href="#">Mot de passe oublie ?</a>
 
-	<input type="submit" name="seConnecter" class="btn-connexion" value="Connexion"></input>
+	<input type="submit" name="seConnecter" class="btn-formulaire" value="Connexion"></input>
 
 	<a class="lien-connexion sign-in" href="index.jsp?page=5">Inscrivez vous</a>
 

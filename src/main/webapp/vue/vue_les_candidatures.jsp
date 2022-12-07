@@ -120,4 +120,10 @@ else if(session.getAttribute("role") != null && session.getAttribute("role").equ
 		<%
 	}
 }
+else 
+{
+    response.sendRedirect("index.jsp?page=4");
+    return;
+}
 %>
+

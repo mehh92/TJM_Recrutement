@@ -72,7 +72,6 @@ header
     align-items: center;
     font-family: "Poppins-light";
     font-size: 25px;
-    width: 35%;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -195,11 +194,13 @@ header
 .element-info img 
 {
     display: inline-block;
+    /*
     transform: translateY(10px);
     -webkit-transform: translateY(10px);
     -moz-transform: translateY(10px);
     -ms-transform: translateY(10px);
     -o-transform: translateY(10px);
+    */
     margin-right: 10px;
 }
 
@@ -613,6 +614,14 @@ header
 	align-items: center;
 	justify-content: space-around;
 }
+
+.entete-candidature-candidat
+{
+	align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
 
 .ref-offre
 {

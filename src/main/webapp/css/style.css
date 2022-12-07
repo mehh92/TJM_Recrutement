@@ -844,3 +844,28 @@ header
 {
 	margin-bottom: 20px;
 }
+
+
+
+.div-hide {
+    display: none;
+}
+
+.div-hide.active {
+    display: block;
+}
+
+.btn-hide {
+    border: none;
+    background: none;
+}
+
+.containerOffre {
+    position: relative;
+}
+
+.containerOffre .btn-hide {
+    position: absolute;
+    top: 2%;
+    left: 28%;
+}

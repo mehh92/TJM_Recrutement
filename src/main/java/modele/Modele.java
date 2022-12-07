@@ -103,6 +103,40 @@ public class Modele {
 		return lesOffres;
 	}
 	
+	public static ArrayList<Offre> selectAllOffres(String ville)
+	{
+		String requete = "select * from offre where lieux='"+ville+"';";
+		ArrayList<Offre> lesOffres = new ArrayList<Offre>();
+		try
+		{
+			uneBdd.seConnecter();
+			Statement unStat = uneBdd.getMaConnexion().createStatement();
+			//extraction des Offres
+			ResultSet lesResultats = unStat.executeQuery(requete);
+			while (lesResultats.next())
+			{
+				Offre uneOffre = new Offre (lesResultats.getInt("id_offre"), lesResultats.getString("titre"),
+						lesResultats.getString("lieux"),lesResultats.getString("secteur"),lesResultats.getString("salaire"),
+						lesResultats.getString("contrat"), lesResultats.getString("date_offre"),
+						lesResultats.getString("description_personne"),
+						lesResultats.getString("description_travail"),
+						lesResultats.getString("description_mission")
+						);
+				
+				//Ajout du client dans l'ArrayList
+				lesOffres.add(uneOffre);
+			}
+			unStat.execute(requete);
+			unStat.close();
+			uneBdd.seDeconnecter();
+		}
+		catch(SQLException exp)
+		{
+			System.out.println("impossible d'executer la requete :" + requete);
+		}
+		return lesOffres;
+	}
+	
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		String requete = "select * from offre where id_offre='"+id_offre+"';";

@@ -1,3 +1,5 @@
+<div class="div-hide">
+
 <h1 class="titre-insert-offre">Inserer une offre </h1>
 
 <form method="post" class="form-horizontal border border-insert-offre">
@@ -49,6 +51,4 @@
 
   </form>
   
-  
-
-
+</div>

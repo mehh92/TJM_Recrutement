@@ -23,6 +23,11 @@ public class Controleur {
 		return Modele.selectAllOffres();
 	}
 	
+	public static ArrayList<Offre> selectAllOffres(String ville)
+	{
+		return Modele.selectAllOffres(ville);
+	}
+	
 	public static Offre selectWhereOffre(int id_offre)
 	{
 		return Modele.selectWhereOffre(id_offre);

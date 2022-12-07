@@ -2,11 +2,40 @@
 <%@page import="controleur.Offre"%>
 <%@page import="controleur.Controleur"%>
 
+<div class="containerOffre">
 <h1 class="titre-les-offre">Nos differentes offres</h1>
-
+<%if(session.getAttribute("role") != null && session.getAttribute("role").equals("recruteur"))
+{
+%>
+	<button class="btn-hide"><img src="assets/ajouter.png" width='30' height='30'></button>
+<% } %>
+<center>
+<div>
+<form method="post">
+ville:
+<input type="text" name="ville"></input>
+<input type="submit" name="rechercher" value="rechercher"></input>
+</form>
+</div>
+</center>
 <%
 
-ArrayList<Offre> lesOffres = Controleur.selectAllOffres();
+String ville = "";
+ArrayList<Offre> lesOffres = null;
+
+if(request.getParameter("rechercher") != null)
+{
+	ville = request.getParameter("ville");
+}
+if(ville.equals(""))
+{
+	lesOffres = Controleur.selectAllOffres();
+}
+else
+{
+	lesOffres = Controleur.selectAllOffres(ville);
+}
+
 
 %><div class="container-card"><%
 for (Offre uneOffre : lesOffres)
@@ -54,5 +83,6 @@ for (Offre uneOffre : lesOffres)
 	
 	<%
 }
-%></div><%
+%></div>
+</div><%
 %>

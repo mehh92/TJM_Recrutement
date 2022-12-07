@@ -3,7 +3,7 @@
 <%@ include file="vue/vue_connexion.jsp" %>
 
 <% 
-int pageCo = Integer.parseInt(request.getParameter("page"));
+
 User unUser = null;
 if(request.getParameter("seConnecter") != null)
 {
@@ -25,14 +25,8 @@ if(request.getParameter("seConnecter") != null)
         session.setAttribute("prenom", unUser.getPrenom());
         session.setAttribute("tel", unUser.getTel());
         session.setAttribute("role", unUser.getRole());
-        if (pageCo == 4)
-        {
-            response.sendRedirect("index.jsp?page=3");
-        }
-        else
-        {
-            response.sendRedirect("index.jsp?page=1");
-        }
+        response.sendRedirect("index.jsp?page=1");
+
 
     }
 }

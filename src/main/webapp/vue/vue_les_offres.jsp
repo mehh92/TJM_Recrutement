@@ -9,7 +9,7 @@
 %>
 	<button class="btn-hide"><img src="assets/ajouter.png" width='30' height='30'></button>
 <% } %>
-<center>
+
 <div>
 <form method="post">
 ville:
@@ -17,7 +17,7 @@ ville:
 <input type="submit" name="rechercher" value="rechercher"></input>
 </form>
 </div>
-</center>
+
 <%
 
 String ville = "";
